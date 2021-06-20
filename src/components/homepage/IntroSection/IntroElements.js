@@ -11,19 +11,20 @@ export const IntroContainer = styled.div`
     position: relative;
     z-index: 1;
     margin-top: 80px;
-    
+    /* :before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0,6) 100%), linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 100%);
+        z-index: 2;
+    } */
+   
 `
 
-export const IntroBg = styled.div`
-    position: absolute;
-    top: 0px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    max-width: 100%;
-    height: 750px;
-    overflow: hidden;
-`
+
 export const IntroContent = styled.div`
     background-color: rgba(35,30,35,0.35);
     z-index: 3;
@@ -31,7 +32,7 @@ export const IntroContent = styled.div`
     position: absolute;
     padding: 8px 24px;
     display: flex;
-    margin-top: 70%;
+    margin-top: 10%;
     flex-direction: column;
     align-items: center;
     border-radius: 8px;

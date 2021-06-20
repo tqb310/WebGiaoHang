@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {Link as LinkR} from 'react-router-dom'
 import {Link as LinkS} from 'react-scroll'
+import {Link} from 'react-router-dom'
 
 export const sticki = styled.div`
     background-color: black;
@@ -67,7 +68,8 @@ export const NavMenu = styled.ul`
     align-items: center;
     list-style: none;
     text-align: center;
-    margin-right: -22px;
+    margin-right: -20px;
+    margin-top: 10px;
 
     @media screen and (max-width: 768px) {
         display: none;
@@ -76,9 +78,10 @@ export const NavMenu = styled.ul`
 
 export const NavItem = styled.li`
     height: 80px;
+    
 `;
 
-export const NavLinks = styled(LinkS)`
+export const NavLinks = styled(LinkR)`
     color: #fff;
     display: flex;
     align-items: center;
@@ -87,8 +90,11 @@ export const NavLinks = styled(LinkS)`
     height: 100%;
     cursor: pointer;
 
-    &.active {
+    &:hover {
         border-bottom: 3px solid #01bf71;
+        transition: all 0.2s ease-out;
+        text-decoration: none;
+        color: white;
     }
 `;
 
@@ -118,6 +124,7 @@ export const NavBtnLink = styled(LinkR)`
         transition: all 0.2s ease-in-out;
         background: #fff;
         color: #010606;
+        text-decoration: none;
     }
 
 `
