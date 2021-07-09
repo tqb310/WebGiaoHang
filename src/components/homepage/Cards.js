@@ -17,7 +17,7 @@ function Cards() {
               src={tracking}
               text='Tra cứu'
               label='Theo dõi vận đơn'
-              path='/services'
+              path='/tracuu'
             />
             <CardItem
               src={finding}

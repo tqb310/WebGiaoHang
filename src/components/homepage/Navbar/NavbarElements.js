@@ -11,10 +11,10 @@ export const sticki = styled.div`
 export const Nav = styled.nav`
     background: #161616;
     height: 80px;
- 
+    padding: 0 20px;
     //margin-top: -80px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     font-size: 1rem;
     position: fixed;
@@ -34,19 +34,20 @@ export const NavbarContainer = styled.div`
     z-index: 1;
     width: 100%;
     padding: 0 24px;
-    max-width: 1100px;
+    //max-width: 1100px;
 `;
 
 export const NavLogo = styled(LinkR)`
-    color: #fff;
     justify-self: flex-start;
     cursor: pointer;
-    font-size: 1.5rem;
     display: flex;
-    align-items: center;
-    margin-left: 24px;
+    justify-content: flex-start;
+    /*margin-left: 24px;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: none; */
+    height: 80px;
+    max-width: 100px;
+    padding: 0;
 `;
 
 export const MobileIcon = styled.div`

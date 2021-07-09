@@ -2,6 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { Button } from '../Button';
 import { Link } from 'react-router-dom';
+import logo from '../images/logo_company.png'
 
 function Footer() {
   return (
@@ -11,7 +12,7 @@ function Footer() {
           QUÁ NHANH - KHÔNG HỀ NGUY HIỂM DELIVERY
         </p>
         <p className='footer-subscription-text'>
-          You can unsubscribe at any time.
+          Theo dõi những thông tin mới nhất qua email.
         </p>
         <div className='input-areas'>
           <form>
@@ -19,40 +20,39 @@ function Footer() {
               className='footer-input'
               name='email'
               type='email'
-              placeholder='Your Email'
+              placeholder='Email của bạn'
             />
-            <button type="button" class="btn btn-info">Subscribe</button>
+            <button type="button" class="btn btn-info">Theo dõi</button>
           </form>
         </div>
       </section>
       <div class='footer-links'>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
-            <h2>About Us</h2>
-            <Link to='/sign-up'>How it works</Link>
-            <Link to='/'>Testimonials</Link>
-            <Link to='/'>Careers</Link>
-            <Link to='/'>Investors</Link>
-            <Link to='/'>Terms of Service</Link>
+            <h2>Thông tin</h2>
+            <Link to='/sign-up'>Hoạt động</Link>
+            <Link to='/'>Doanh nghiệp</Link>
+            <Link to='/'>Chủ đầu tư</Link>
+            <Link to='/'>Chính sách</Link>
           </div>
           <div class='footer-link-items'>
-            <h2>Contact Us</h2>
-            <Link to='/'>Contact</Link>
-            <Link to='/'>Support</Link>
-            <Link to='/'>Destinations</Link>
-            <Link to='/'>Sponsorships</Link>
+            <h2>Liên hệ</h2>
+            <Link to='/'>Hotline</Link>
+            <Link to='/'>Email</Link>
+            <Link to='/'>Địa điểm</Link>
+            <Link to='/'>Tài trợ</Link>
           </div>
         </div>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
-            <h2>Videos</h2>
-            <Link to='/'>Submit Video</Link>
-            <Link to='/'>Ambassadors</Link>
-            <Link to='/'>Agency</Link>
-            <Link to='/'>Influencer</Link>
+            <h2>Hỗ trợ</h2>
+            <Link to='/'>Điều khoản sử dụng</Link>
+            <Link to='/'>Chính sách vận chuyển</Link>
+            <Link to='/'>Góp ý dịch vụ</Link>
+            <Link to='/'>Câu hỏi thường gặp</Link>
           </div>
           <div class='footer-link-items'>
-            <h2>Social Media</h2>
+            <h2>Truyền thông</h2>
             <Link to='/'>Instagram</Link>
             <Link to='/'>Facebook</Link>
             <Link to='/'>Youtube</Link>
@@ -64,7 +64,7 @@ function Footer() {
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-              DEL_LOGO
+              <div class="NavLogo" to='/'><img src={logo}/></div>
               <i class='fab fa-typo3' />
             </Link>
           </div>

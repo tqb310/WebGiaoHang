@@ -16,21 +16,25 @@ export const Container = styled.div`
         rgba(10,201,122,1) 100%
     );
 `;
+
 export const NavLinks = styled(Link)`
     color: #fff;
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding: 20px 0;
+    padding: 5px 0;
     height: 100%;
     cursor: pointer;
-    display: inline;
-
+    margin-right: 75%;
     &:hover {
-       text-decoration:none;
+        border-bottom: 3px solid #01bf71;
+        
+        text-decoration: none;
+        color: white;
         
     }
 `;
+
 
 export const FormWrap = styled.div`
     height: 100%;
@@ -113,6 +117,7 @@ export const FormButton = styled.button`
     color: #fff;
     font-size: 20px;
     cursor: pointer;
+    margin-bottom: 10px;
 `;
 
 export const Text = styled.span`

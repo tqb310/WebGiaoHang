@@ -11,7 +11,7 @@ import {
     FormButton,
     NavLinks,
     Text
-} from './SigninElements';
+} from './SignupElements';
 
 const SignIn = () => {
     return (
@@ -23,15 +23,16 @@ const SignIn = () => {
                         
                         <Form action='#'>
                         <Icon to='/'>delivery</Icon>
-                            <FormH1>Đăng nhập vào tài khoản của bạn</FormH1>
+                            <FormH1>Đăng kí tài khoản mới</FormH1>
                             <FormLabel htmlFor='for'>Tài khoản</FormLabel>
                             <FormInput type='email' required />
                             <FormLabel htmlFor='for'>Mật khẩu</FormLabel>
                             <FormInput type='password' required />
-                            <FormButton type='submit'>Đăng nhập</FormButton>
-                            <NavLinks to='signup'>Quên mật khẩu?</NavLinks>
-                            <FormLabel>Chưa có tài khoản? <NavLinks to='signup'> Đăng kí</NavLinks></FormLabel>
-                            
+                            <FormLabel htmlFor='for'>Xác nhận mật khẩu</FormLabel>
+                            <FormInput type='password' required />
+                            <FormButton type='submit'>Tiếp tục</FormButton>
+                            <FormLabel>Đã có tài khoản?</FormLabel>
+                            <NavLinks to='signin'>Đăng nhập</NavLinks>
                         </Form>
                     </FormContent>
                 </FormWrap>

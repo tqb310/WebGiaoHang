@@ -11,19 +11,20 @@ import {
     NavBtn,
     NavBtnLink
 } from './NavbarElements';
+import logo from '../images/logo_company.png'
 
 const Navbar = ({toggle}) => {
     return (
         <>
             <Nav>
                 <NavbarContainer>
-                    <NavLogo to='/'>delivery</NavLogo>
+                    <NavLogo to='/'><img src={logo}/></NavLogo>
                     <MobileIcon onClick={toggle}>
                         <FaBars />
                     </MobileIcon>
                     <NavMenu>
                         <NavItem>
-                            <NavLinks to='tracking'>Theo dõi vận đơn</NavLinks>
+                            <NavLinks to='tracuu'>Theo dõi vận đơn</NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks to='services'>Dịch vụ</NavLinks>
