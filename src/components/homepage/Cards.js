@@ -5,6 +5,8 @@ import CardItem2 from './CardItem2';
 import tracking from './images/tracking.jpg'
 import finding from './images/find.png'
 import estimate from './images/estimate.jpg'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function Cards() {
   return (

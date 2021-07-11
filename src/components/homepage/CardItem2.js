@@ -1,50 +1,164 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import './selectFilter.min.js'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Form } from 'react-bootstrap';
+import './CardItem2.css'
 function CardItem2(props) {
   return (
     <>
       <li className='cards__item'>
         <div className='cards__item__link' to={props.path}>
-          <figure className='cards__item__pic-wrap v2' data-category={props.label}>
-          <h2>hl</h2>
-            {/* <select data-target="secondList" class="firstList selectFilter">
-                <option value="-1">Select</option>
-                <option data-ref="one" >First One</option>
-                <option data-ref="two" >First Two</option>
-                <option data-ref="three">First Three</option>
-            </select>
-            <br />
-            <br />
-            <select data-target="thirdList" class="secondList selectFilter">
-                <option value="-1">Select</option>
-                <option data-ref="A" data-belong="one" >First One</option>
-                <option data-ref="B" data-belong="two">First Two</option>
-                <option data-ref="C" data-belong="three">First Three</option>
-                <option data-ref="D" data-belong="one">Second One</option>
-                <option data-ref="E" data-belong="two">Second Two</option>
-                <option data-ref="F" data-belong="three">Second Three</option>
-            </select>
-            <br />
-            <br />
-            <select class="thirdList selectFilter">
-                <option value="-1">Select</option>
-                <option data-belong="A" >First One</option>
-                <option data-belong="B">First Two</option>
-                <option data-belong="C">First Three</option>
-                <option data-belong="D">Second One</option>
-                <option data-belong="E">Second Two</option>
-                <option data-belong="F">Second Three</option>
-                <option data-belong="A">Third One</option>
-                <option data-belong="B">Third Two</option>
-                <option data-belong="C">Third Three</option>
-
-            </select> */}
+          <figure className='cards__item__pic-wrap2 v2' data-category={props.label}>
+            <div class="wrapper">
+              <div class="card_estimate_table">
+                <h3 class="form_title">Ước tính chi phí</h3>
+                <div className="form1">
+                  <h4>Gửi từ</h4>
+                  <Form.Control as="select">
+                    <option>An Giang</option>
+                    <option>Bà Rịa-Vũng Tàu</option>
+                    <option>Bạc Liêu</option>
+                    <option>Bắc Kạn</option>
+                    <option>Bắc Giang</option>
+                    <option>Bắc Ninh</option>
+                    <option>Bến Tre</option>
+                    <option>Bình Dương</option>
+                    <option>Bình Định</option>
+                    <option>Bình Phước</option>
+                    <option>Bình Thuận</option>
+                    <option>Cà Mau</option>
+                    <option>Cao Bằng</option>
+                    <option>Cần Thơ (TP)</option>
+                    <option>Đà Nẵng (TP)</option>
+                    <option>Đắk Lắk</option>
+                    <option>Đắk Nông</option>
+                    <option>Điện Biên</option>
+                    <option>Đồng Nai</option>
+                    <option>Đồng Tháp</option>
+                    <option>Gia Lai</option>
+                    <option>Hà Giang</option>
+                    <option>Hà Nam</option>
+                    <option>Hà Nội (TP)</option>
+                    <option>Hà Tây</option>
+                    <option>Hà Tĩnh</option>
+                    <option>Hải Dương</option>
+                    <option>Hải Phòng (TP)</option>
+                    <option>Hòa Bình</option>
+                    <option>Hồ Chí Minh (TP)</option>
+                    <option>Hậu Giang</option>
+                    <option>Hưng Yên</option>
+                    <option>Khánh Hòa</option>
+                    <option>Kiên Giang</option>
+                    <option>Kon Tum</option>
+                    <option>Lai Châu</option>
+                    <option>Lào Cai</option>
+                    <option>Lạng Sơn</option>
+                    <option>Lâm Đồng</option>
+                    <option>Long An</option>
+                    <option>Nam Định</option>
+                    <option>Nghệ An</option>
+                    <option>Ninh Bình</option>
+                    <option>Ninh Thuận</option>
+                    <option>Phú Thọ</option>
+                    <option>Phú Yên</option>
+                    <option>Quảng Bình</option>
+                    <option>Quảng Nam</option>
+                    <option>Quảng Ngãi</option>
+                    <option>Quảng Ninh</option>
+                    <option>Quảng Trị</option>
+                    <option>Sóc Trăng</option>
+                    <option>Sơn La</option>
+                    <option>Tây Ninh</option>
+                    <option>Thái Bình</option>
+                    <option>Thái Nguyên</option>
+                    <option>Thanh Hóa</option>
+                    <option>Thừa Thiên – Huế</option>
+                    <option>Tiền Giang</option>
+                    <option>Trà Vinh</option>
+                    <option>Tuyên Quang</option>
+                    <option>Vĩnh Long</option>
+                    <option>Vĩnh Phúc</option>
+                    <option>Yên Bái</option>
+                  </Form.Control>
+                </div>
+                <div className="form2">
+                  <h4>Gửi đến</h4>
+                  <Form.Control as="select">
+                    <option>An Giang</option>
+                    <option>Bà Rịa-Vũng Tàu</option>
+                    <option>Bạc Liêu</option>
+                    <option>Bắc Kạn</option>
+                    <option>Bắc Giang</option>
+                    <option>Bắc Ninh</option>
+                    <option>Bến Tre</option>
+                    <option>Bình Dương</option>
+                    <option>Bình Định</option>
+                    <option>Bình Phước</option>
+                    <option>Bình Thuận</option>
+                    <option>Cà Mau</option>
+                    <option>Cao Bằng</option>
+                    <option>Cần Thơ (TP)</option>
+                    <option>Đà Nẵng (TP)</option>
+                    <option>Đắk Lắk</option>
+                    <option>Đắk Nông</option>
+                    <option>Điện Biên</option>
+                    <option>Đồng Nai</option>
+                    <option>Đồng Tháp</option>
+                    <option>Gia Lai</option>
+                    <option>Hà Giang</option>
+                    <option>Hà Nam</option>
+                    <option>Hà Nội (TP)</option>
+                    <option>Hà Tây</option>
+                    <option>Hà Tĩnh</option>
+                    <option>Hải Dương</option>
+                    <option>Hải Phòng (TP)</option>
+                    <option>Hòa Bình</option>
+                    <option>Hồ Chí Minh (TP)</option>
+                    <option>Hậu Giang</option>
+                    <option>Hưng Yên</option>
+                    <option>Khánh Hòa</option>
+                    <option>Kiên Giang</option>
+                    <option>Kon Tum</option>
+                    <option>Lai Châu</option>
+                    <option>Lào Cai</option>
+                    <option>Lạng Sơn</option>
+                    <option>Lâm Đồng</option>
+                    <option>Long An</option>
+                    <option>Nam Định</option>
+                    <option>Nghệ An</option>
+                    <option>Ninh Bình</option>
+                    <option>Ninh Thuận</option>
+                    <option>Phú Thọ</option>
+                    <option>Phú Yên</option>
+                    <option>Quảng Bình</option>
+                    <option>Quảng Nam</option>
+                    <option>Quảng Ngãi</option>
+                    <option>Quảng Ninh</option>
+                    <option>Quảng Trị</option>
+                    <option>Sóc Trăng</option>
+                    <option>Sơn La</option>
+                    <option>Tây Ninh</option>
+                    <option>Thái Bình</option>
+                    <option>Thái Nguyên</option>
+                    <option>Thanh Hóa</option>
+                    <option>Thừa Thiên – Huế</option>
+                    <option>Tiền Giang</option>
+                    <option>Trà Vinh</option>
+                    <option>Tuyên Quang</option>
+                    <option>Vĩnh Long</option>
+                    <option>Vĩnh Phúc</option>
+                    <option>Yên Bái</option>
+                  </Form.Control>
+                </div>
+                <div className="form3">
+                  <h4>Trọng lượng (Gram) </h4>
+                  <input class="gram_input" type="text" placeholder="Gram"></input>
+                </div>
+                <div className='btn_wrap'>
+                  <button type="button" class="btn btn-primary card_btn">{props.text}</button>
+                </div>
+              </div>
+            </div>
           </figure>
-          <div className='cards__item__info'>
-            <button type="button" class="btn btn-primary card_btn">{props.text}</button>
-          </div>
         </div>
       </li>
       

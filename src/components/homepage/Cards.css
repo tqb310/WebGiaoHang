@@ -47,11 +47,15 @@ h1 {
   overflow: hidden;
   text-decoration: none;
 }
-
 .cards__item__pic-wrap {
   position: relative;
   width: 100%;
   padding-top: 67%;
+  overflow: hidden;
+}
+.cards__item__pic-wrap2 {
+  position: relative;
+  width: 100%;
   overflow: hidden;
 }
 .v2 {
@@ -72,7 +76,7 @@ h1 {
   font-size: 14px;
   font-weight: 700;
   color: #fff;
-  background-color: #e6ce1b;
+  background-color: burlywood;
   box-sizing: border-box;
 }
 

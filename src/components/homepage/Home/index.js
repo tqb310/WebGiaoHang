@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Sidebar from '../Sidebar';
 import Navbar from '../Navbar';
 import { IntroSection } from '../IntroSection';
-import Footer from '../Footer2/Footer'
+import Footer from '../Footer/Footer'
 import Cards from '../Cards'
 
 const Home = () => {
