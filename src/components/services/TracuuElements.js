@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 export const Container = styled.div`
     min-height: 692px;
-    position: fixed;
+    position: relative;
     margin-top: 80px;
     bottom:0;
     left: 0;
@@ -38,7 +38,7 @@ export const FormWrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    margin-top: 250px;
     @media screen and (max-width: 400px) {
         height: 80%;
     }

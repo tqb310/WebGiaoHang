@@ -14,7 +14,7 @@ function CardItem(props) {
             />
           </figure>
           <div className='cards__item__info'>
-            <button type="button" class="btn btn-primary card_btn">{props.text}</button>
+            <button type="button" className="btn btn-primary card_btn">{props.text}</button>
           </div>
         </Link>
       </li>

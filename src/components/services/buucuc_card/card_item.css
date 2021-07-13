@@ -1,0 +1,28 @@
+.title {
+    color: white;
+}
+.content {
+    background: rgba(35, 35, 35, 1);
+    margin-bottom: 5px;
+    height: 200px;
+    width: 100%;
+    list-style-type: none;
+    padding: 10px 14px;
+}
+
+._body {
+    color: white;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.a_row {
+    margin-top: 10px;
+    
+}
+.direction {
+    text-decoration: none;
+    cursor: pointer;
+}

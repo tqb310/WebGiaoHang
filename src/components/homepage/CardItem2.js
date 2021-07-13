@@ -6,14 +6,14 @@ function CardItem2(props) {
   return (
     <>
       <li className='cards__item'>
-        <div className='cards__item__link' to={props.path}>
-          <figure className='cards__item__pic-wrap2 v2' data-category={props.label}>
-            <div class="wrapper">
-              <div class="card_estimate_table">
-                <h3 class="form_title">Ước tính chi phí</h3>
+        <div className='cards__item__link v2'>
+            <div className="wrapper ">
+              <div className="card_estimate_table">
+                <h3 className="form_title">Ước tính chi phí</h3>
                 <div className="form1">
                   <h4>Gửi từ</h4>
                   <Form.Control as="select">
+                    <option >Chọn Tỉnh/TP</option>
                     <option>An Giang</option>
                     <option>Bà Rịa-Vũng Tàu</option>
                     <option>Bạc Liêu</option>
@@ -83,6 +83,7 @@ function CardItem2(props) {
                 <div className="form2">
                   <h4>Gửi đến</h4>
                   <Form.Control as="select">
+                    <option >Chọn Tỉnh/TP</option>
                     <option>An Giang</option>
                     <option>Bà Rịa-Vũng Tàu</option>
                     <option>Bạc Liêu</option>
@@ -151,14 +152,13 @@ function CardItem2(props) {
                 </div>
                 <div className="form3">
                   <h4>Trọng lượng (Gram) </h4>
-                  <input class="gram_input" type="text" placeholder="Gram"></input>
+                  <input className="gram_input" type="text" placeholder="Gram"></input>
                 </div>
                 <div className='btn_wrap'>
-                  <button type="button" class="btn btn-primary card_btn">{props.text}</button>
+                  <button type="button" className="btn btn-primary card_btn">{props.text}</button>
                 </div>
               </div>
             </div>
-          </figure>
         </div>
       </li>
       

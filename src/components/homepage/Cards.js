@@ -4,7 +4,6 @@ import CardItem from './CardItem';
 import CardItem2 from './CardItem2';
 import tracking from './images/tracking.jpg'
 import finding from './images/find.png'
-import estimate from './images/estimate.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -25,7 +24,7 @@ function Cards() {
               src={finding}
               text='Tìm kiếm'
               label='Tìm kiếm bưu cục'
-              path='/services'
+              path='/buucuc'
             />
           </ul>
           <ul className='cards__items'>

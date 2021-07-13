@@ -2,13 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  margin: 10% 0;
-  height: 80%;
+  /* position: relative; */
+  margin: 0 0;
+  height: 85%;
 }
-.wrapper:hover {
-  backdrop-filter: blur(8px);
-}
+
+
 .card_estimate_table {
   width: 80%;
   height: 500px;
@@ -17,10 +16,14 @@
   filter: blur(5px);
   border-radius: 6px;
   z-index: 100;
-  margin-bottom: 5%;
+  margin-bottom: 0;
   filter: drop-shadow(0 6px 20px rgba(19, 96, 240, 0.217));
   flex-direction: column;
 }
+.card_estimate_table:hover {
+  backdrop-filter: blur(8px);
+}
+
 .form_title {
   text-align: center !important;
   background-color: burlywood;

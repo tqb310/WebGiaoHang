@@ -1,0 +1,13 @@
+#map_title {
+    color: white;
+    text-align: center;
+    margin: 4px;
+  
+}
+
+.map_wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: aquamarine;
+  /* height: 600px; */
+}

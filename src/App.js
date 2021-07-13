@@ -5,6 +5,7 @@ import Home from './components/homepage/Home';
 import SigninPage from './components/Signin_Signup/signin';
 import SignupPage from './components/Signin_Signup/signup';
 import TracuuPage from './components/services/tracuu_page';
+import BuucucPage from './components/services/buucuc_page';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/signin' component={SigninPage} exact />
         <Route path='/signup' component={SignupPage} exact />
         <Route path='/tracuu' component={TracuuPage} exact />
+        <Route path='/buucuc' component={BuucucPage} exact />
       </Switch>
     </Router>
   );
