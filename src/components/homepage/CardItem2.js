@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form } from 'react-bootstrap';
 import './CardItem2.css'
+import { Link } from 'react-router-dom';
 function CardItem2(props) {
   return (
     <>
@@ -154,9 +155,11 @@ function CardItem2(props) {
                   <h4>Trọng lượng (Gram) </h4>
                   <input className="gram_input" type="text" placeholder="Gram"></input>
                 </div>
-                <div className='btn_wrap'>
+                
+                <Link className='cards__item__info' to={props.path}>
                   <button type="button" className="btn btn-primary card_btn">{props.text}</button>
-                </div>
+                </Link>
+                
               </div>
             </div>
         </div>

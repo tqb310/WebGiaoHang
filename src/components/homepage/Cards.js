@@ -29,10 +29,9 @@ function Cards() {
           </ul>
           <ul className='cards__items'>
             <CardItem2
-              
               text='Xem kết quả'
               label='Ước tính chi phí'
-              path='/services'
+              path='/chiphi'
             />
           </ul>
         </div>

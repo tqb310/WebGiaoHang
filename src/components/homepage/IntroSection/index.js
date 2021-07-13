@@ -29,13 +29,13 @@ export const IntroSection = () => {
                     <div className="carousel-inner">
                         
                         <div className="carousel-item active">
-                            <img className="d-block w-100" src={corou3} alt="First slide"/>
+                            <img className="d-block w-100" src={corou1} alt="First slide"/>
                         </div>
                         <div className="carousel-item">
                             <img className="d-block w-100" src={corou2} alt="Second slide"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={corou1} alt="Third slide"/>
+                            <img className="d-block w-100" src={corou3} alt="Third slide"/>
                         </div>
                         
                     </div>

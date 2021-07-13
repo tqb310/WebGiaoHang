@@ -14,6 +14,9 @@ import {
 } from './SigninElements';
 
 const SignIn = () => {
+    const abc = () => {
+        
+    }
     return (
         <>
             <Container>
@@ -28,7 +31,7 @@ const SignIn = () => {
                             <FormInput type='email' required />
                             <FormLabel htmlFor='for'>Mật khẩu</FormLabel>
                             <FormInput type='password' required />
-                            <FormButton type='submit'>Đăng nhập</FormButton>
+                            <FormButton type='submit' onClick={abc}>Đăng nhập</FormButton>
                             <NavLinks to='signup'>Quên mật khẩu?</NavLinks>
                             <FormLabel>Chưa có tài khoản? <NavLinks to='signup'> Đăng kí</NavLinks></FormLabel>
                             
