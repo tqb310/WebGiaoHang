@@ -6,6 +6,8 @@ import Map from './map_card/map'
 import 'font-awesome/css/font-awesome.min.css';
 import {BiSearchAlt} from 'react-icons/bi';
 import {AiOutlineSearch} from 'react-icons/ai';
+import {getBuucuc} from './API/buucuc'
+import Card_item from './buucuc_card/card_item'
 
 function useHover(){
     const ref = useRef()
@@ -25,27 +27,79 @@ function useHover(){
     return [ref, hovered]
 }
 
+
+
 const Buucuc = () => {
 
     const [ref, hovered] = useHover()
+
+    const [buucuc, set_buucuc] = useState('')
+    const [resuilt, set_resuilt] = useState('')
+
+    const changeInput = (event) => {
+        set_buucuc(event.target.value)
+    }
+
+    const timkiem = async () => {
+        try {
+            console.log(buucuc)
+            const data = await getBuucuc(buucuc)
+            set_resuilt(data)
+            console.log(data)
+        } catch (error) {
+            
+        }
+    }
 
     return(
         <>
             <div className="container">
                 <div className="form_wrap">
                     <div className="list_recommend">
-                        <Cards />
+                    <div className="container_1">
+            <h5 className="big_title">Gợi ý</h5>
+            <div className="wrapper">
+                <ul className="card_items">
+                    <Card_item
+                        title={resuilt.tenkho}
+                        location="298 Hùng Vương - TT Chư Prông - Chư Prông - Gia Lai"
+                        number="033546845"
+                    />
+                    <Card_item
+                        title="Bưu cục Tp.HCM"
+                        location="Đại Học Nông Lâm - Khu Phố 8 - Linh Trung Quận Thủ Đức"
+                        number="0396874563"
+                    />
+                    <Card_item
+                        title="Bưu cục Hà Nội"
+                        location="Số 22 Ngõ 38 Trần Quý Kiên - Dịch Vọng - Cầu Giấy - Hà Nội"
+                        number="033536875"
+                    />
+                    <Card_item
+                        title="Bưu cục Đà Nẵng"
+                        location="282 Trưng Nữ Vương, Phường Bình Thuận, Quận Hải Châu, TP Đà Nẵng"
+                        number="033346854"
+                    />
+                    <Card_item
+                        title="Bưu cục Bình Dương"
+                        location="77 Hoàng Hoa Thám, Phường Hiệp Thành., Tp Thủ Dầu Một, Bình Dương"
+                        number="033543645"
+                    />
+                </ul>
+            </div>
+            
+        </div>
                     </div>
                     <div className="map">
                         <h5 id="map_title">Bản đồ</h5>
                         <div className="search" ref={ref}>
                             <h5 id="search_h5"><BiSearchAlt /> Tìm kiếm</h5>
                             {hovered && <div className="input-group rounded">
-                                <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search"
+                                <input type="search" onChange={changeInput} className="form-control rounded" placeholder="Search" aria-label="Search"
                                     aria-describedby="search-addon" />
-                                <span className="input-group-text border-0" id="search-addon">
+                                <button onClick={timkiem} className="input-group-text border-0" id="search-addon">
                                     <AiOutlineSearch/>
-                                </span>
+                                </button>
                             </div>}
                         </div>
                         <div className="map_wrapper">
