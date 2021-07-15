@@ -2,12 +2,18 @@
     color: white;
     text-align: center;
     margin: 4px;
-  
+    position: relative;
 }
 
-.map_wrapper {
-  display: flex;
-  flex-direction: row;
-  background-color: aquamarine;
-  /* height: 600px; */
+
+
+/* .container_2 {
+  height: 650px;
+  width: 800px;
+} */
+.leaflet-container {
+  position: relative;
+  height: 600px;
+  z-index: 1;
+  margin-right: 2px;
 }

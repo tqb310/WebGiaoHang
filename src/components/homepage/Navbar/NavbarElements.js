@@ -11,7 +11,7 @@ export const sticki = styled.div`
 export const Nav = styled.nav`
     background: #161616;
     height: 80px;
-    padding: 0 20px;
+    padding: 0 8%;
     //margin-top: -80px;
     display: flex;
     justify-content: flex-start;

@@ -1,6 +1,17 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
+export const Parent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(
+        108deg,
+        #348F50,
+        #56B4D3
+    );
+`;
+
 export const Container = styled.div`
     min-height: 692px;
     position: relative;
@@ -13,8 +24,8 @@ export const Container = styled.div`
     overflow: hidden;
     background: linear-gradient(
         108deg,
-        rgba(1,147,86,1) 0%,
-        rgba(10,201,122,1) 100%
+        #348F50,
+        #56B4D3
     );
 `;
 export const NavLinks = styled(Link)`
@@ -34,7 +45,7 @@ export const NavLinks = styled(Link)`
 `;
 
 export const FormWrap = styled.div`
-    height: 100%;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,6 +95,18 @@ export const Form = styled.form`
     }
 `;
 
+export const Form3 = styled.div`
+    background: white;
+    width: 75%;
+    justify-self: center;
+    align-self: center;
+    background: #010101;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    border-radius: 4px;
+`;
 export const FormH1 = styled.h1`
     margin-bottom: 40px;
     color: #fff;
@@ -96,6 +119,13 @@ export const FormLabel = styled.label`
     margin-bottom: 8px;
     font-size: 14px;
     color: #fff;
+
+`;
+export const _Label = styled.label`
+    margin: 8px;
+    font-size: 14px;
+    color: #fff;
+    /* margin-right: 160px; */
 
 `;
 
