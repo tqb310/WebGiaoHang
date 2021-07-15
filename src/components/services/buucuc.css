@@ -5,12 +5,7 @@
   height: 800px;
   max-width: 100%;
   margin-top: 80px;
-  background: linear-gradient(
-    108deg,
-    rgba(1, 147, 86, 1) 0%,
-    rgba(10, 201, 122, 1) 100%
-  );
-  
+  background: linear-gradient(108deg, #348f50, #56b4d3);
 }
 .form_wrap {
   display: flex;
@@ -24,8 +19,19 @@
   /* max-height: 100%; */
 }
 .map {
-
+  position: relative;
   background: #2b2b2b;
   width: 70%;
 }
-
+.search {
+  position: absolute;
+  z-index: 2;
+  margin: 10px 20px;
+  right: 10px;
+}
+#search_h5 {
+  color: #2b2b2b !important;
+}
+.input-group {
+  width: 100%;
+}
