@@ -8,6 +8,8 @@ import {BiSearchAlt} from 'react-icons/bi';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {getBuucuc} from './API/buucuc'
 import Card_item from './buucuc_card/card_item'
+import {MapContainer, TileLayer} from "react-leaflet"
+import "leaflet/dist/leaflet.css";
 
 function useHover(){
     const ref = useRef()
@@ -34,7 +36,10 @@ const Buucuc = () => {
     const [ref, hovered] = useHover()
 
     const [buucuc, set_buucuc] = useState('')
-    const [resuilt, set_resuilt] = useState('')
+    const [resuilt, set_resuilt] = useState([{"tenkho": "Bưu cục Gia Lai", "diachi":"58 Quang Trung, Huyện Đức Cơ, Tỉnh Gia Lai"},{"tenkho": "Bưu cục Đà Nẵng", "diachi":"282 Trưng Nữ Vương, Phường Bình Thuận, Quận Hải Châu, TP Đà Nẵng"}, {"tenkho": "Bưu cục Bình Dương", "diachi":"77 Hoàng Hoa Thám, Phường Hiệp Thành., Tp Thủ Dầu Một, Bình Dương"}])
+    const [x, set_x] = useState(106.629662)
+    const [y, set_y] = useState(10.823099)
+    const ab = [{"name": "toan", "tuoi": 21}, {"name": "toan1", "tuoi": 22}]
 
     const changeInput = (event) => {
         set_buucuc(event.target.value)
@@ -42,15 +47,20 @@ const Buucuc = () => {
 
     const timkiem = async () => {
         try {
-            console.log(buucuc)
             const data = await getBuucuc(buucuc)
-            set_resuilt(data)
-            console.log(data)
-        } catch (error) {
+            var arr = []
+            data.forEach(element => {
+                arr.push(element)
+            });
+            set_x(data[0].kinhdo)
+            set_y(data[0].vido)
+            set_resuilt(arr)
+            console.log(resuilt[0].tenkho)
             
+        } catch (error) {
+            alert("Không tìm thấy")
         }
     }
-
     return(
         <>
             <div className="container">
@@ -61,18 +71,18 @@ const Buucuc = () => {
             <div className="wrapper">
                 <ul className="card_items">
                     <Card_item
-                        title={resuilt.tenkho}
-                        location="298 Hùng Vương - TT Chư Prông - Chư Prông - Gia Lai"
+                        title={resuilt[0].tenkho || "Bưu cục Gia Lai"}
+                        location={resuilt[0].diachi || "Thị trấn Chư Ty, Huyện Đức Cơ, Tỉnh Gia Lai"}
                         number="033546845"
                     />
                     <Card_item
-                        title="Bưu cục Tp.HCM"
-                        location="Đại Học Nông Lâm - Khu Phố 8 - Linh Trung Quận Thủ Đức"
+                        title={resuilt[1].tenkho || "Bưu cục Gia Lai"}
+                        location={resuilt[1].diachi || "Thị trấn Chư Ty, Huyện Đức Cơ, Tỉnh Gia Lai"}
                         number="0396874563"
                     />
                     <Card_item
-                        title="Bưu cục Hà Nội"
-                        location="Số 22 Ngõ 38 Trần Quý Kiên - Dịch Vọng - Cầu Giấy - Hà Nội"
+                        title="Bưu cục Gia Lai"
+                        location="Thị trấn Chư Ty, Huyện Đức Cơ, Tỉnh Gia Lai"
                         number="033536875"
                     />
                     <Card_item
@@ -103,12 +113,14 @@ const Buucuc = () => {
                             </div>}
                         </div>
                         <div className="map_wrapper">
-                            <Map 
-                                    // googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyCi0yFiBFSL9ViV3HiI7wXes4KF1PL8SCs&callback=initMap`}
-                                    // loadingElement={<div style={{ height: `100%` }} />}
-                                    // containerElement={<div style={{ height: `600px`, margin: `auto`, border: '2px solid black' }} />}
-                                    // mapElement={<div style={{ height: `100%` }} />}
+                        <MapContainer center={[y,x]} zoom={12}>
+
+                            <TileLayer
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                attribution='$copy; <a href="http://osm.org/copyright">openstreetmap</a>
+                                contributiors'
                             />
+                        </MapContainer>
                         </div>
                     </div>
                 </div>

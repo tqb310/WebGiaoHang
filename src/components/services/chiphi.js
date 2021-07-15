@@ -16,19 +16,11 @@ const Chiphi = () => {
       Math.round(
         define(xRef.current.value, yRef.current.value, wRef.current.value, 2) /
           100000
-      ) + 1
+      ) + 2
     );
-    setFastDay(
-      Math.round(
-        define(xRef.current.value, yRef.current.value, wRef.current.value, 1) /
-          100000
-      ) + 1
-    );
+  
     setNormal(
       define(xRef.current.value, yRef.current.value, wRef.current.value, 2)
-    );
-    setFast(
-      define(xRef.current.value, yRef.current.value, wRef.current.value, 1)
     );
   };
   return (
@@ -209,13 +201,13 @@ const Chiphi = () => {
               </div>
               <div className="option">
                 <h5 className="form4">Chuyển phát nhanh </h5>
-                <h5 className="form4">{fast || "..."} VND </h5>
+                <h5 className="form4">{Math.round(normal*1.67) || "..."} VND </h5>
                 <h5 className="form4">trong</h5>
-                <h5 className="form4">{fastDay || "..."} ngày </h5>
+                <h5 className="form4">{Math.round(norDay * 1.5) || "..."} ngày </h5>
               </div>
               <div className="option">
                 <h5 className="form4">Chuyển phát thường </h5>
-                <h5 className="form4">{normal || "..."} VND </h5>
+                <h5 className="form4">{Math.round(normal) || "..."} VND </h5>
                 <h5 className="form4">trong</h5>
                 <h5 className="form4">{norDay || "..."} ngày </h5>
               </div>
