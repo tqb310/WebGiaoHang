@@ -1,10 +1,4 @@
-export const rulePrice = {
-  price1: 4, // 0 -> 20 : 4k
-  price2: 6, // 20 -> 100 : 6k
-  price3: 8, // 100 -> 250 : 8k
-  price4: 2, // up to 250g : 2k
-};
-export const ruleDistance = [
+const ruleDistance = [
   {
     location: 1,
     latitude: 232,
@@ -326,3 +320,57 @@ export const ruleDistance = [
     longitude: 1116,
   }, // Yên Bái
 ];
+
+const priceForWeight = (weight) => {
+  if (0 < parseInt(weight) <= 20) return 4000;
+  if (20 < parseInt(weight) <= 100) return 6000;
+  if (100 < parseInt(weight) <= 250) return 8000;
+  if (parseInt(weight) > 250) return 8000 + (weight % 250) * 2000;
+};
+
+const priceForDistance = (distance) => {
+  if (distance <= 15) return 0;
+  if (15 < distance <= 165) return 30000;
+  if (165 < distance <= 1000) return (distance % 10) * 1000;
+  if (distance > 1000) return 120000;
+};
+
+const priceForType = (type) => {
+  if (type === 1) return 1;
+  else return 1.67;
+};
+// p = x3
+const distance = (x, y, p) => {
+  let distance = Math.sqrt(
+    (x[0] - y[0]) * (x[0] - y[0]) + (x[1] - y[1]) * (x[1] - y[1])
+  );
+  return distance * p;
+};
+
+const price = (distance, weight, type) => {
+  return (
+    (priceForWeight(weight) + priceForDistance(distance)) * priceForType(type)
+  );
+};
+
+export const define = (locationX, locationY, weight, type) => {
+  let arr = [...ruleDistance],
+    x = [],
+    y = [];
+  arr.forEach((item) => {
+    if (item.location.toString() === locationX) {
+      x.push(item.latitude, item.longitude);
+    }
+    if (item.location.toString() === locationY) {
+      y.push(item.latitude, item.longitude);
+    }
+  });
+  console.log(
+    locationX,
+    locationY,
+    weight,
+    type,
+    price(distance(x, y, 3), weight, type)
+  );
+  return price(distance(x, y, 3), weight, type);
+};

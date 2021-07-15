@@ -3,7 +3,7 @@ const BASE_URL = 'http://localhost:9999';
 
 export const getDetail = async (id) => {
     try {
-        const data = await axios.get(`${BASE_URL}/kho/${id}`);
+        const data = await axios.get(`${BASE_URL}/warehouse/province${id}`);
         return data.data
     } catch (error) {
         

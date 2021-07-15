@@ -6,7 +6,7 @@ export const getDetail = async (id) => {
         const data = await axios.get(`${BASE_URL}/order/${id}`);
         return data.data
     } catch (error) {
-        return('Đơn hàng không tồn tại')
+        
     }
 }
 
