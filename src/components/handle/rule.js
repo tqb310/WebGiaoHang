@@ -322,16 +322,18 @@ const ruleDistance = [
 ];
 
 const priceForWeight = (weight) => {
-  if (0 < parseInt(weight) <= 20) return 4000;
-  if (20 < parseInt(weight) <= 100) return 6000;
-  if (100 < parseInt(weight) <= 250) return 8000;
-  if (parseInt(weight) > 250) return 8000 + (weight % 250) * 2000;
+  if (0 < parseInt(weight) && parseInt(weight) <= 20) return 4000;
+  if (20 < parseInt(weight) && parseInt(weight) <= 100) return 6000;
+  if (100 < parseInt(weight) && parseInt(weight) <= 250) return 8000;
+  if (250 < parseInt(weight) && parseInt(weight) <= 30000)
+    return 8000 + (weight / 250) * 2000;
+  if (30000 < parseInt(weight)) return;
 };
 
 const priceForDistance = (distance) => {
-  if (distance <= 15) return 0;
-  if (15 < distance <= 165) return 30000;
-  if (165 < distance <= 1000) return (distance % 10) * 1000;
+  if (0 < distance && distance <= 15) return 0;
+  if (15 < distance && distance <= 165) return 30000;
+  if (165 < distance && distance <= 1000) return (distance / 10) * 1000;
   if (distance > 1000) return 120000;
 };
 
@@ -349,8 +351,9 @@ const distance = (x, y, p) => {
 
 const price = (distance, weight, type) => {
   return (
-    (priceForWeight(weight) + priceForDistance(distance)) * priceForType(type)
-  );
+    (priceForWeight(weight) + priceForDistance(distance)) *
+    priceForType(type)
+  ).toFixed(2);
 };
 
 export const define = (locationX, locationY, weight, type) => {
@@ -365,12 +368,5 @@ export const define = (locationX, locationY, weight, type) => {
       y.push(item.latitude, item.longitude);
     }
   });
-  console.log(
-    locationX,
-    locationY,
-    weight,
-    type,
-    price(distance(x, y, 3), weight, type)
-  );
   return price(distance(x, y, 3), weight, type);
 };
