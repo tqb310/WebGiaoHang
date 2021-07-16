@@ -176,7 +176,7 @@ const Chiphi = () => {
                   </Form.Control>
                 </div>
                 <div className="form1">
-                  <h5>Trọng lượng (Tối đa 30kg) </h5>
+                  <h5>Trọng lượng  </h5>
                   <input
                     className="gram_input"
                     type="text"
@@ -203,13 +203,13 @@ const Chiphi = () => {
                 <h5 className="form4">Chuyển phát nhanh </h5>
                 <h5 className="form4">{Math.round(normal*1.67) || "..."} VND </h5>
                 <h5 className="form4">trong</h5>
-                <h5 className="form4">{Math.round(norDay * 1.5) || "..."} ngày </h5>
+                <h5 className="form4">{norDay || "..."} ngày </h5>
               </div>
               <div className="option">
                 <h5 className="form4">Chuyển phát thường </h5>
                 <h5 className="form4">{Math.round(normal) || "..."} VND </h5>
                 <h5 className="form4">trong</h5>
-                <h5 className="form4">{norDay || "..."} ngày </h5>
+                <h5 className="form4">{Math.round(norDay * 1.5) || "..."} ngày </h5>
               </div>
             </div>
           </div>

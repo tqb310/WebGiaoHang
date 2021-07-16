@@ -5,6 +5,7 @@ import {MdLocationOn} from 'react-icons/md';
 import {AiTwotonePhone} from 'react-icons/ai';
 import {FaDirections} from 'react-icons/fa'
 const Card_item = (props) => {
+    console.log(props)
     return (
         <li className="content">
             <div className="title">

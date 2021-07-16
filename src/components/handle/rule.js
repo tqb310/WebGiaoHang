@@ -352,7 +352,7 @@ const distance = (x, y, p) => {
 
 const price = (distance, weight) => {
   return (
-    (priceForWeight(weight) * distance) 
+    (priceForWeight(weight) * distance) + 5000
     
   ).toFixed(2);
 };
@@ -369,5 +369,5 @@ export const define = (locationX, locationY, weight) => {
       y.push(item.latitude, item.longitude);
     }
   });
-  return price(distance(x, y, 100), weight);  
+  return price(distance(x, y, 60), weight);  
 };
