@@ -1,0 +1,25 @@
+.card_items {
+  width: 95%;
+  position: absolute;
+  top: 0;
+}
+.wrapper {
+  overflow: auto;
+  height: 600px;
+  position: relative;
+  margin-top: 0;
+}
+.wrapper:hover {
+  backdrop-filter: blur(8px);
+}
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+/* .container_1 {
+    max-height: 90%;
+} */
+.big_title {
+  text-align: center;
+  color: white;
+  margin: 4px;
+}
