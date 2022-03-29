@@ -322,23 +322,26 @@ const ruleDistance = [
 ];
 
 const priceForWeight = (weight) => {
-  if (0 < parseInt(weight) <= 20) return 4000;
-  if (20 < parseInt(weight) <= 100) return 6000;
-  if (100 < parseInt(weight) <= 250) return 8000;
-  if (parseInt(weight) > 250) return 8000 + (weight % 250) * 2000;
+  if (0 < parseInt(weight) && parseInt(weight) <= 200) return 1;
+  if (200 < parseInt(weight) && parseInt(weight) <= 500) return 1.2;
+  if (500 < parseInt(weight) && parseInt(weight) <= 1000) return 1.5;
+  if (1000 < parseInt(weight) && parseInt(weight) <= 5000) return 2.2 ;
+  if (5000 < parseInt(weight) && parseInt(weight) <= 30000) return 3.5
+    
+  if (30000 < parseInt(weight)) return 15;
 };
 
-const priceForDistance = (distance) => {
-  if (distance <= 15) return 0;
-  if (15 < distance <= 165) return 30000;
-  if (165 < distance <= 1000) return (distance % 10) * 1000;
-  if (distance > 1000) return 120000;
-};
+// const priceForDistance = (distance) => {
+//   if (0 < distance && distance <= 15) return 0;
+//   if (15 < distance && distance <= 165) return 30000;
+//   if (165 < distance && distance <= 1000) return (distance / 10) * 1000;
+//   if (distance > 1000) return 120000;
+// };
 
-const priceForType = (type) => {
-  if (type === 1) return 1;
-  else return 1.67;
-};
+// const priceForType = (type) => {
+//   if (type === 1) return 1.67;
+//   else return 1;
+// };
 // p = x3
 const distance = (x, y, p) => {
   let distance = Math.sqrt(
@@ -347,13 +350,14 @@ const distance = (x, y, p) => {
   return distance * p;
 };
 
-const price = (distance, weight, type) => {
+const price = (distance, weight) => {
   return (
-    (priceForWeight(weight) + priceForDistance(distance)) * priceForType(type)
-  );
+    (priceForWeight(weight) * distance) + 5000
+    
+  ).toFixed(2);
 };
 
-export const define = (locationX, locationY, weight, type) => {
+export const define = (locationX, locationY, weight) => {
   let arr = [...ruleDistance],
     x = [],
     y = [];
@@ -365,12 +369,5 @@ export const define = (locationX, locationY, weight, type) => {
       y.push(item.latitude, item.longitude);
     }
   });
-  console.log(
-    locationX,
-    locationY,
-    weight,
-    type,
-    price(distance(x, y, 3), weight, type)
-  );
-  return price(distance(x, y, 3), weight, type);
+  return price(distance(x, y, 60), weight);  
 };

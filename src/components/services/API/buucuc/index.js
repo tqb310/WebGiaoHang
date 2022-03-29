@@ -1,9 +1,11 @@
 import axios from "axios";
 const BASE_URL = 'http://localhost:9999';
 
-export const getDetail = async (id) => {
+export const getBuucuc = async (id) => {
     try {
-        const data = await axios.get(`${BASE_URL}/kho/${id}`);
+        console.log(id)
+        const data = await axios.get(`${BASE_URL}/warehouse/province`, {params: {tinh: id}});
+        
         return data.data
     } catch (error) {
         
